@@ -11,12 +11,14 @@ permalink: /docs/commands/
 The database commands are executed in this order (for a batch download):
 
 ```
-before()
+start()
 for each image
     for each tag
-        tag()
+        tag_before()
     image()
-after()
+    for each tag
+        tag_after()
+end()
 ```
 
 Database commands are enabled as soon as you put your database login information in the settings. Note that you have to create the database/tables beforehand.
